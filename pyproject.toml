@@ -1,0 +1,30 @@
+[project]
+name = "contract-bot"
+version = "0.1.0"
+description = "Сервис напоминаний по контрактам с Telegram-ботом"
+readme = "README.md"
+authors = [
+    { name = "Bogdan Suchko", email = "bahdan.suchko@yandex.by" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "aiogram>=3.4.1,<4.0.0",
+    "apscheduler>=3.10",
+    "docxtpl>=0.16",
+    "fastapi>=0.110",
+    "openpyxl>=3.1",
+    "pandas>=2.2",
+    "pydantic>=2.7",
+    "python-dotenv>=1.0",
+    "requests>=2.31",
+    "xlrd>=2.0",
+    "uvicorn>=0.30"
+]
+
+[project.scripts]
+contract-bot = "contract_bot.main:main"
+delete_cache = "contract_bot.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
