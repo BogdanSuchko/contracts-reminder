@@ -1,7 +1,7 @@
 {
   "build": {
     "builder": "NIXPACKS",
-    "buildCommand": "pip install uv && uv sync && pip install -e ."
+    "buildCommand": "pip install uv && uv sync"
   },
   "deploy": {
     "startCommand": "uv run python -m contract_bot.main"

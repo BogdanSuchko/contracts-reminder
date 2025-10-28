@@ -26,8 +26,5 @@ contract-bot = "contract_bot.main:main"
 delete_cache = "contract_bot.cli:main"
 
 [build-system]
-requires = ["setuptools>=61"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools.packages.find]
-where = ["src"]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
