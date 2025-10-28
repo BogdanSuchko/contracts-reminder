@@ -26,22 +26,8 @@ contract-bot = "contract_bot.main:main"
 delete_cache = "contract_bot.cli:main"
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
 
-[tool.hatch.build]
-include = ["src/**", "templates/**", "config/**", "scripts/**", "README.md"]
-
-[tool.hatch.build.targets.wheel]
-packages = ["contract_bot"]
-path = "src"
-
-[tool.hatch.build.targets.sdist]
-include = [
-    "src/contract_bot/**",
-    "templates/**",
-    "config/**",
-    "scripts/**",
-    "README.md",
-    "pyproject.toml",
-]
+[tool.setuptools.packages.find]
+where = ["src"]
