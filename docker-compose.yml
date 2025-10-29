@@ -1,12 +1,11 @@
-version: "3.9"
-
 services:
   contract-bot:
-    container_name: contract-bot
     build: .
-    restart: unless-stopped
+    container_name: contract-bot
     env_file:
       - .env
+    restart: always
     volumes:
       - ./storage:/app/storage
       - ./generated:/app/generated
+      - ./templates:/app/templates:ro
